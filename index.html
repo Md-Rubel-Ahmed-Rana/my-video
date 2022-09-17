@@ -11,16 +11,20 @@
 
     <section>
         <div class="container">
-            <h2>My Videos</h2>
-            <video id="video-file" controls src=""></video>
-            <div class="buttons">
-                <button>Prev</button>
-                <button>Pause</button>
-                <button onclick="playNext()" >Next</button>
+            <div class="video-header">
+                <h2>My Videos</h2>
+                <video id="video-file" controls autoplay src=""></video>
             </div>
-            <h4 id="song-name">Song:</h4>
-            <h4 id="singer-name">Singer:</h4>
-            <h4 id="developer">Developer:</h4>
+            <div class="buttons">
+                <button id="play-prev" >Prev</button>
+                <button>Pause</button>
+                <button id="play-next" >Next</button>
+            </div>
+            <div class="video-info">
+                <h3>Song: <span id="song-name"></span></h3>
+                <h3>Singer: <span id="singer-name"></span></h3>
+                <h3>Developer: <span id="developer"></span></h3>
+            </div>
         </div>
     </section>
     <script src="./main.js"></script>

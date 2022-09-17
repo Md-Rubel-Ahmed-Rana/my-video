@@ -8,6 +8,8 @@ const loadVideos = async() => {
 
 // display videos one by one to the UI
 const showVideos = (videos) => {
+    const playNextBtn = document.getElementById("play-next");
+    const playPrevBtn = document.getElementById("play-prev");
     let videoNumber = 0;
     const videoFile = document.getElementById("video-file");
     videoFile.src = videos[videoNumber].videoFile;
@@ -16,12 +18,28 @@ const showVideos = (videos) => {
     songName.innerText = videos[videoNumber].videoName
 
     const singerName = document.getElementById("singer-name");
-    singerName.innerText = videos[videoNumber].singer
-    const developer = document.getElementById("developer");
-    developer.innerText = videos[videoNumber].developer
-    const playNext = () => {
+    singerName.innerText = videos[videoNumber].singer;
 
-    }
+    const developer = document.getElementById("developer");
+    developer.innerText = videos[videoNumber].developer;
+
+    playNextBtn.addEventListener("click",() => {
+        videoNumber++;
+        videoFile.src = videos[videoNumber].videoFile;
+        songName.innerText = videos[videoNumber].videoName;
+        singerName.innerText = videos[videoNumber].singer;
+        developer.innerText = videos[videoNumber].developer;
+    })
+    playPrevBtn.addEventListener("click",() => {
+        videoNumber--;
+        if (videoNumber < 0) {
+            videoNumber = videos.length -1;
+        }
+        videoFile.src = videos[videoNumber].videoFile;
+        songName.innerText = videos[videoNumber].videoName;
+        singerName.innerText = videos[videoNumber].singer;
+        developer.innerText = videos[videoNumber].developer;
+    })
 }
 
 loadVideos()
