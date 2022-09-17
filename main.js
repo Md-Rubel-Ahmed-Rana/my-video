@@ -26,15 +26,19 @@ const showVideos = (videos) => {
 
     playNextBtn.addEventListener("click",() => {
         videoNumber++;
-        videoFile.src = videos[videoNumber].videoFile;
-        songName.innerText = videos[videoNumber].videoName;
-        singerName.innerText = videos[videoNumber].singer;
-        developer.innerText = videos[videoNumber].developer;
+        if (videoNumber > videos.length - 1) {
+            videoNumber = 0;
+        }
+            videoFile.src = videos[videoNumber].videoFile;
+            songName.innerText = videos[videoNumber].videoName;
+            singerName.innerText = videos[videoNumber].singer;
+            developer.innerText = videos[videoNumber].developer;
     })
+
     playPrevBtn.addEventListener("click",() => {
         videoNumber--;
         if (videoNumber < 0) {
-            videoNumber = videos.length -1;
+            videoNumber = videos.length - 1;
         }
         videoFile.src = videos[videoNumber].videoFile;
         songName.innerText = videos[videoNumber].videoName;
