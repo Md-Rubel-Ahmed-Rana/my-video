@@ -44,10 +44,15 @@ const showVideos = (videos) => {
 
     pauseBtn.addEventListener("click", () => {
         const videoFile = document.getElementById("video-file");
-        if (videoFile.paused === true){
-            videoFile.play()
+        const playPause = document.getElementById("play-pause");
+        if (videoFile.paused === true && playPause.classList.contains("fa-play")){
+            videoFile.play();
+            playPause.classList.remove("fa-play")
+            playPause.classList.add("fa-pause")
         }else{
             videoFile.pause();
+            playPause.classList.add("fa-play")
+            playPause.classList.remove("fa-pause")
         }
     })
 }
