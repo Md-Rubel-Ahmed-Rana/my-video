@@ -10,6 +10,7 @@ const loadVideos = async() => {
 const showVideos = (videos) => {
     const playNextBtn = document.getElementById("play-next");
     const playPrevBtn = document.getElementById("play-prev");
+    const pauseBtn = document.getElementById("pause");
     let videoNumber = 0;
     const videoFile = document.getElementById("video-file");
     videoFile.src = videos[videoNumber].videoFile;
@@ -39,6 +40,15 @@ const showVideos = (videos) => {
         songName.innerText = videos[videoNumber].videoName;
         singerName.innerText = videos[videoNumber].singer;
         developer.innerText = videos[videoNumber].developer;
+    })
+
+    pauseBtn.addEventListener("click", () => {
+        const videoFile = document.getElementById("video-file");
+        if (videoFile.paused === true){
+            videoFile.play()
+        }else{
+            videoFile.pause();
+        }
     })
 }
 
