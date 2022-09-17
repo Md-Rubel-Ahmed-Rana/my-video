@@ -20,19 +20,25 @@ body{
     margin: 0%;
     color: white;
 }
-.buttons{
-    margin: 0%;
-}
+
 video{
     width: 100%;
     height: 300px;
     text-align: center;
     outline: none;
 }
-button{
-    background-color: #3705ffb5;
+.buttons{
+    background-color:#0000005c;
+    width: 94%;
+    margin: 0px auto;
     padding: 5px;
-    color: whitesmoke;
+    border-radius: 10px;
+}
+
+button{
+    background-color: #08085a;
+    padding: 5px;
+    color: white;
     font-size: 20px;
     margin: 0px 5px;
     border: none;
