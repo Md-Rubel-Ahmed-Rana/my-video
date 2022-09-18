@@ -14,7 +14,6 @@ const showVideos = (videos) => {
     let videoNumber = 0;
     const videoFile = document.getElementById("video-file");
     videoFile.src = videos[videoNumber].videoFile;
-
     const songName = document.getElementById("song-name");
     songName.innerText = videos[videoNumber].videoName
 
